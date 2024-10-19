@@ -23,16 +23,26 @@ MODULES
 **3.8**
 
 - Followind modules are used, and normally part of basic  python environment:
+- 
 **numpy**
+  
 **matplotlib**
+
 **pandas**
+
 **os**
+
 **re**
+
 **math**
+
 **scipy**
 
+
 - Special modules used, likely need to be installed with the commands:
+  
   > pip install opencv-python
+  
   > pip install scikit-learn 
 
 
