@@ -19,11 +19,12 @@ DOI: https://doi.org/10.1093/mnras/stac445
 MODULES
 =======
 
-- Preferred python version: 
+- Preferred python version:
+  
 **3.8**
 
 - Followind modules are used, and normally part of basic  python environment:
-- 
+  
 **numpy**
   
 **matplotlib**
