@@ -25,7 +25,7 @@ MODULES
 * math
 * scipy
 
-- Special modules used, likely need to be installed with the commands:
+- Special modules cv2 and sklearn likely need to be installed with the commands:
 > pip install opencv-python
 > pip install scikit-learn 
 
