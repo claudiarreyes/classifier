@@ -4,8 +4,8 @@ Aim: to classify the reliability of Δν measurements using neural networks
 
 Inputs required:
 
-1. Background corrected, long cadence power spectra, files should end in '.psd.bgcorr'
-2. File containing pipeline results of estimated Δν and ν_{max}, in coloumns named "numax(gaus)" and "dnu", respectively. Column named "file" should correspond to the names of the PSD files, but ending on '.psd' (not '.psd.bgcorr')
+1. Background corrected, long cadence power spectra, individual files should end in '.psd.bgcorr'
+2. Table containing pipeline results of estimated Δν and ν_{max}, in coloumns named "numax(gaus)" and "dnu", respectively. Column named "file" should correspond to the names of the PSD files, but ending on '.psd' (not '.psd.bgcorr')
 
 Outputs:
 
