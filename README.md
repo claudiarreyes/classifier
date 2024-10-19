@@ -52,6 +52,6 @@ Download the project folder to your machine and:
 1. Open Dnu_classifier.py using a text editor
 2. Locate the lines between "INPUT" and "INPUT END" 
 3. Replace the paths with the corresponding path of the user machine
-4. If needed, replace the value of "threshold" with a number between 0 and 1.
+4. If needed, replace the value of "threshold" with a value between 0 and 1.
 5. Save changes to Dnu_classifier.py
 6. run the classifier from terminal using the command "python Dnu_classifier.py" this may take between 2 and 10 minutes depending on the amount of data.
