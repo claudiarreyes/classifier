@@ -2,6 +2,11 @@
 
 Aim: to classify the reliability of Δν measurements using neural networks
 
+Inputs required:
+
+1. Background corrected, long cadence power spectra, files should end in '.psd.bgcorr'
+2. File containing pipeline results, file column should correspond to the names of the PSD files, but ending on '.psd' (not '.psd.bgcorr')
+  
 ===============
 
 Author: Claudia Reyes
