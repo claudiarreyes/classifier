@@ -19,33 +19,26 @@ DOI: https://doi.org/10.1093/mnras/stac445
 MODULES
 =======
 
-- Preferred python version:
+Preferred python version:
   
-**3.8**
+* **3.8**
 
-- Followind modules are used, and normally part of basic  python environment:
+Followind modules are used, and normally part of basic  python environment:
   
-**numpy**
-  
-**matplotlib**
-
-**pandas**
-
-**os**
-
-**re**
-
-**math**
-
-**scipy**
+* **numpy**
+* **matplotlib**
+* **pandas**
+* **os**
+* **re**
+* **math**
+* **scipy**
 
 
 - Special modules used, likely need to be installed with the commands:
-  
+````
   > pip install opencv-python
-  
   > pip install scikit-learn 
-
+````
 
 HOW TO USE
 ==========
