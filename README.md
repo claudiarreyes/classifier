@@ -6,6 +6,17 @@ Inputs required:
 
 1. Background corrected, long cadence power spectra, files should end in '.psd.bgcorr'
 2. File containing pipeline results of estimated Δν and ν_{max}, in coloumns named "numax(gaus)" and "dnu", respectively. Column named "file" should correspond to the names of the PSD files, but ending on '.psd' (not '.psd.bgcorr')
+
+Outputs:
+
+1. histogram_NAMEDATA.png
+2. results_NAMEDATA.png
+3. NAMEDATA_ALL_N1_GOODDNU_N2_FP_N3
+
+Where *NAMEDATA* is the name of the folder containing the power spectra, *N1* is the number of stars (or PSD) with dnu and numax results from the pipeline, *N2* is the number of dnu with probabilities exceeding the threshold imposed, and *N3* is the number of false positives identified because their numax/dnu values stray too much from the empyrical relation.
+
+Files 1 and 2 are useful graphical representations of the results.
+File 3 is the table with the calculated probabilities by the neural network.
   
 ===============
 
