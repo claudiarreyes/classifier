@@ -5,13 +5,17 @@ Aim: to classify the reliability of Δν measurements using neural networks
 ===============
 
 Author: Claudia Reyes
+
 Dates: 2020-2014
 
 ===============
 
 Published: Monthly Notices of the Royal Astronomical Society, Volume 511, Issue 4, April 2022, Pages 5578–5596
+
 Title: Vetting asteroseismic Δν measurements using neural networks
+
 Authors: Claudia Reyes, Dennis Stello, Marc Hon, Joel C Zinn
+
 DOI: https://doi.org/10.1093/mnras/stac445
 
 ===============
@@ -42,6 +46,8 @@ Special modules used, likely need to be installed with the commands:
 
 HOW TO USE
 ==========
+
+Download the project folder to your machine and:
 
 1. Open Dnu_classifier.py using a text editor
 2. Locate the lines between "INPUT" and "INPUT END" 
