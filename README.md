@@ -70,4 +70,4 @@ Download the project folder to your machine and:
 3. Replace the paths with the corresponding path of the user machine
 4. If needed, replace the value of "threshold" with a value between 0 and 1.
 5. Save changes to Dnu_classifier.py
-6. run the classifier from terminal using the command "python Dnu_classifier.py" this may take between 2 and 10 minutes depending on the amount of data.
+6. run the classifier from terminal using the command "python Dnu_classifier.py" this may take between 3 and 20+ minutes, depending on the local machine and the amount of data.
