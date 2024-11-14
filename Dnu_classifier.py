@@ -40,7 +40,7 @@ pclass = '/data/CLASSIFIER/' # make sure contains: "Metrics_scaling", "Data_mode
 # Power Spectra folder:
 dpath = '/data/CLASSIFIER_OCT24_ROMAN/data/RC_Cadence_15/'
 
-# global parameters folder:
+# global parameters file full path:
 dp = '/data/CLASSIFIER_OCT24_ROMAN/results/list_all_RCSimulations_Cadence_15_OS5.psd.globalpars_151024'
 
 # Where to save results? Use final "/"
@@ -88,7 +88,7 @@ if __name__ == '__main__':
     
     # ----
 
-    if len(id_list)==len(entries)==len(spec):    
+    if len(id_list)==len(spec):    
         # Read global parameters 
         gp = pd.read_csv(dp , delim_whitespace=True, usecols=range(5))
         gp.columns = ['file','numax','numax_sig','dnu','dnu_sig']
@@ -286,14 +286,14 @@ if __name__ == '__main__':
         dnu_SYD = gp.dnu[indexgp]
 
         if numax_SYD<=3 or dnu_SYD<=0.3:
-            print('negative or too small SYD vals for %i' %starID)
+            print('negative or too small SYD vals for %s' %starID)
             rej.append(starID)
             rejnumax.append(numax_SYD)
             rejdnu.append(dnu_SYD)
             id_rej = id_rej+1
             continue
         if numax_SYD>=279.8:
-            print('too large SYD nu max vals for %i' %starID)
+            print('too large SYD nu max vals for %is' %starID)
             rej.append(starID)
             rejnumax.append(numax_SYD)
             rejdnu.append(dnu_SYD)
@@ -301,7 +301,7 @@ if __name__ == '__main__':
             continue
 
         if dnu_SYD>numax_SYD:
-            print('Delta nu from SYD is larger than numax for %i' %starID)
+            print('Delta nu from SYD is larger than numax for %s' %starID)
             rej.append(starID)
             rejnumax.append(numax_SYD)
             rejdnu.append(dnu_SYD)
@@ -484,7 +484,7 @@ if __name__ == '__main__':
 
         try: ransac.fit(X_ransac, Y_ransac); line_y_ransac = ransac.predict(X_ransac)
             # Predict data of estimated models and substract it from ACF
-        except ValueError: print('could not fit ransac, ID %i' %starID);line_y_ransac = 0
+        except ValueError: print('could not fit ransac, ID %s' %starID);line_y_ransac = 0
 
         # Predict data of estimated models and substract it from ACF
         Y_ACF_1 = Y_ransac - line_y_ransac
