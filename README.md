@@ -61,7 +61,7 @@ Special modules **cv2** and **sklearn** likely need to be installed with the com
 ````
 In case of error building opencv-python: "ERROR: Failed building wheel for opencv-python". Try:
 ````
-> pip3 install opencv-python==3.4.13.47
+> pip3 install opencv-python==4.6.0
 ````
 
 HOW TO USE
