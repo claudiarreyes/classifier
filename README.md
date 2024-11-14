@@ -59,6 +59,10 @@ Special modules **cv2** and **sklearn** likely need to be installed with the com
   > pip install opencv-python
   > pip install scikit-learn 
 ````
+In case of error building opencv-python: "ERROR: Failed building wheel for opencv-python". Try:
+````
+> pip3 install opencv-python==3.4.13.47
+````
 
 HOW TO USE
 ==========
