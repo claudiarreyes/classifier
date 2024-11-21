@@ -16,7 +16,7 @@ plt.rcParams["mathtext.default"] = 'regular'
 
 # SKLEARN
 from sklearn.preprocessing import minmax_scale, StandardScaler
-from tensorflow import keras
+import tf_keras as keras
 from sklearn import linear_model
 
 # Disable TF warning
