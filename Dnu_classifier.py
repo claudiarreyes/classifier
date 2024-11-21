@@ -471,7 +471,16 @@ if __name__ == '__main__':
         tmp = autocorr(ycr0)[:ndnus*(where_is_dnu)+1].copy()
         tmp.resize(ndnus*(where_is_dnu)+1)
         if numax_SYD <7: val3 = tmp[3]; tmp[:3] = [val3]*3
-        else: val6 = tmp[6]; tmp[:6] = [val6]*6
+        else: 
+            try:
+                val6 = tmp[6]; tmp[:6] = [val6]*6
+            except IndexError:
+                print('Wrong autocorrelation length for %is' %starID)
+                rej.append(starID)
+                rejnumax.append(numax_SYD)
+                rejdnu.append(dnu_SYD)
+                id_rej = id_rej+1
+                continue
 
         Y_ACF_0 = minmax_scale(tmp)
         X_ACF_0 = (np.arange(3*where_is_dnu+1)/(where_is_dnu))
