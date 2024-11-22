@@ -309,19 +309,37 @@ if __name__ == '__main__':
             continue
 
             
+        ## make the frequencies start from zero
+        t = xf[0]
+        count = 0
+        step = np.diff(xf)[0]
+        
+        while t>0:
+            t = t-step
+            if t>0:
+                count-=1
+                xf.loc[count] = t
+                yf.loc[count] = 0
+        xf = xf.sort_index().reset_index(drop=True)
+        yf = yf.sort_index().reset_index(drop=True)
+        
+        xfin=xf.copy()
+        yfin=yf.copy()
+        
+        
         ## Get location of parameters
-        where_is_nu_max = (xf-numax_SYD).abs().argsort()[:1].values[0] 
+        where_is_nu_max = (xf-numax_SYD).abs().values.argmin()
         numax_local = xf[where_is_nu_max]
-
-        where_is_dnu = (xf-dnu_SYD).abs().argsort()[:1].values[0]
+        
+        where_is_dnu = (xf-dnu_SYD).abs().values.argmin()
         dnu_local = xf[where_is_dnu]
-
+        
         ## Shift nu max to closest multiple of delta nu
         ## To make the position of the modes meaningful
         numax_sh = int((numax_local/dnu_local) + 0.5)*dnu_local
-
+        
         ## Update location of parameters
-        where_is_nu_max = (xf-numax_sh).abs().argsort()[:1].values[0]  ##This was changed, now includes shifted numax instead of numax from SYD
+        where_is_nu_max = (xf-numax_sh).abs().values.argmin()  ##This was changed, now includes shifted numax instead of numax from SYD
         numax_local = xf[where_is_nu_max]
 
 
@@ -448,10 +466,8 @@ if __name__ == '__main__':
         ## Autocorrelation ##
         ## Go back to original numax value
         ## Cut spectrum between 0.5 numax and 1.5 numax when possible
-        where_is_nu_max_in = (xf-numax_SYD).abs().argsort()[:1].values[0]  
+        where_is_nu_max_in = (xf-numax_SYD).abs().values.argmin()
         numax_local_in = xf[where_is_nu_max_in]
-        xfin = spec.spectrum[k][0].copy()
-        yfin = spec.spectrum[k][1].copy()
 
         ## remove unreasonable single peaks from yfin:
         for a in large_vals:
