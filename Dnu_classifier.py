@@ -79,7 +79,7 @@ if __name__ == '__main__':
         id_list.append(e[:-11])
         
     ## load individual files 
-    spectra = [pd.read_csv(dpath + e, delim_whitespace=True, header=None) for e in entry_list] ## Spectra
+    spectra = [pd.read_csv(dpath + e, sep='\s+', header=None) for e in entry_list] ## Spectra
 
     d = {'ID':id_list, 'spectrum':spectra }
     spec = pd.DataFrame(d)
@@ -90,7 +90,7 @@ if __name__ == '__main__':
 
     if len(id_list)==len(spec):    
         # Read global parameters 
-        gp = pd.read_csv(dp , delim_whitespace=True, usecols=range(5))
+        gp = pd.read_csv(dp , sep='\s+', usecols=range(5))
         gp.columns = ['file','numax','numax_sig','dnu','dnu_sig']
         gp['ID'] = [a[:-4] for a in gp['file']]
     
