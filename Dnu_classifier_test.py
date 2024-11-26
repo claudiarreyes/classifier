@@ -344,12 +344,13 @@ if __name__ == '__main__':
             yfin=yf.copy()
 
 
-            ## Get location of parameters
-            where_is_nu_max = (xf-numax_SYD).abs().argsort()[:1].values[0] 
-            numax_local = xf[where_is_nu_max]
-
-            where_is_dnu = (xf-dnu_SYD).abs().argsort()[:1].values[0]
-            dnu_local = xf[where_is_dnu]
+            # Find the indices of the closest values to numax_SYD and dnu_SYD
+            idx_numax = np.argmin(np.abs(xf - numax_SYD))
+            idx_dnu = np.argmin(np.abs(xf - dnu_SYD))
+    
+            # Extract the values
+            numax_local = xf[idx_numax]
+            dnu_local = xf[idx_dnu]
 
             ## Shift nu max to closest multiple of delta nu
             ## To make the position of the modes meaningful
