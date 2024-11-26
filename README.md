@@ -57,12 +57,10 @@ Followind modules are used, and normally part of basic  python environment:
 Special modules **cv2** and **sklearn** likely need to be installed with the commands:
 ````
   > pip install opencv-python
-  > pip install scikit-learn 
+  > pip install scikit-learn
+  > pip install tensorflow==2.13.1
 ````
-In case of error building opencv-python: "ERROR: Failed building wheel for opencv-python". Try:
-````
-> pip3 install opencv-python==4.6.0.66
-````
+
 
 HOW TO USE
 ==========
