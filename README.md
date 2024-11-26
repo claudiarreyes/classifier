@@ -56,9 +56,13 @@ Followind modules are used, and normally part of basic  python environment:
 
 Special modules **cv2** and **sklearn** likely need to be installed with the commands:
 ````
-  > pip install opencv-python
   > pip install scikit-learn
   > pip install tensorflow==2.13.1
+  > pip install opencv-python
+````
+If opencv-python fails to install, try first:
+````
+  > pip install --upgrade pip setuptools wheel
 ````
 
 
