@@ -318,20 +318,27 @@ if __name__ == '__main__':
             ## make the frequencies start from zero
             t = xf.iloc[0]
             step = np.diff(xf)[0]
-
-            # Calculate all backward steps in one go
+    
+            # Calculate the exact range for new_xf to match n_steps
             n_steps = int(np.ceil(t / step))  # Total steps required
-            new_xf = np.arange(t - step, 0, -step)[::-1]  # Generate backward values
-
-            # Create new indices for xf and yf
+            new_xf = np.linspace(t - step, 0, n_steps, endpoint=False)[::-1]  # Ensure n_steps matches exactly
+    
+            # Create new indices
             new_indices = np.arange(-n_steps, 0)
-
+    
+            if len(new_xf) != len(new_indices):
+                print("Warning: Mismatch between new_xf and new_indices lengths. Adjusting...")
+                min_length = min(len(new_xf), len(new_indices))
+                new_xf = new_xf[:min_length]
+                new_indices = new_indices[:min_length]
+    
             # Update xf and yf efficiently
             xf = pd.concat([pd.Series(new_xf, index=new_indices), xf])
             yf = pd.concat([pd.Series(0, index=new_indices), yf])
-
+    
             xf = xf.sort_index().reset_index(drop=True)
             yf = yf.sort_index().reset_index(drop=True)
+   
             
             xfin=xf.copy()
             yfin=yf.copy()
